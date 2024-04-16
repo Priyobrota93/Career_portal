@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Seeker Profile</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+    <header class="bg-dark text-white text-center py-4">
+        <h1>Job Seeker Profile</h1>
+    </header>
+
+    <div class="container mt-5">
+        <div id="accordion">
+            <!-- Personal Details Section -->
+            <div class="card">
+                <div class="card-header" id="headingOne">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne"
+                            aria-expanded="true" aria-controls="collapseOne">
+                            Personal
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                    <div class="card-body">
+                        <!-- Personal Details Accordion -->
+                        <div class="accordion" id="personalDetailsAccordion">
+                            <div class="card">
+                                <div class="card-header" id="headingPersonalDetails">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link" data-toggle="collapse"
+                                            data-target="#collapsePersonalDetails" aria-expanded="true"
+                                            aria-controls="collapsePersonalDetails">
+                                            Personal Details
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div id="collapsePersonalDetails" class="collapse show"
+                                    aria-labelledby="headingPersonalDetails" data-parent="#personalDetailsAccordion">
+                                    <div class="card-body">
+                                        <form>
+                                            <div class="form-group">
+                                                <label for="photo">Photo:</label>
+                                                <input type="file" class="form-control-file" id="photo">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="firstName">First Name:</label>
+                                                <input type="text" class="form-control" id="firstName"
+                                                    placeholder="Enter Your Name">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="lastName">Last Name:</label>
+                                                <input type="text" class="form-control" id="lastName">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="fatherName">Father's Name:</label>
+                                                <input type="text" class="form-control" id="fatherName">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="motherName">Mother's Name:</label>
+                                                <input type="text" class="form-control" id="motherName">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="gender">Gender:</label>
+                                                <select class="form-control" id="gender">
+                                                    <option>-- Select One --</option>
+                                                    <option>Male</option>
+                                                    <option>Female</option>
+                                                    <option>Other</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="religion">Religion:</label>
+                                                <select class="form-control" id="religion">
+                                                    <option>-- Select One --</option>
+                                                    <option>Buddhism</option>
+                                                    <option>Christianity</option>
+                                                    <option>Hinduism </option>
+                                                    <option>Islam</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="maritalStatus">Marital Status:</label>
+                                                <select class="form-control" id="maritalStatus">
+                                                    <option>-- Select One --</option>
+                                                    <option>Single</option>
+                                                    <option>Married</option>
+                                                    <option>Divorced</option>
+                                                    <option>Widowed</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="nationality">Nationality:</label>
+                                                <input type="text" class="form-control" id="nationality">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="nationalId">National ID:</label>
+                                                <input type="text" class="form-control" id="nationalId">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="primaryMobile">Primary Mobile:</label>
+                                                <input type="tel" class="form-control" id="primaryMobile">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="secondaryMobile">Secondary Mobile:</label>
+                                                <input type="tel" class="form-control" id="secondaryMobile">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="primaryEmail">Primary Email:</label>
+                                                <input type="email" class="form-control" id="primaryEmail">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="bloodGroup">Blood Group:</label>
+                                                <input type="text" class="form-control" id="bloodGroup">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="alternateEmail">Alternate Email:</label>
+                                                <input type="email" class="form-control" id="alternateEmail">
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Address Accordion -->
+                        <div class="accordion" id="addressAccordion">
+                            <div class="card">
+                                <div class="card-header" id="headingAddress">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link" data-toggle="collapse"
+                                            data-target="#collapseAddress" aria-expanded="true"
+                                            aria-controls="collapseAddress">
+                                            Address
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div id="collapseAddress" class="collapse" aria-labelledby="headingAddress"
+                                    data-parent="#addressAccordion">
+                                    <div class="card-body">
+                                        <!-- Present Address Details -->
+                                        <div class="form-group">
+                                            <h6>Present Address Details</h6>
+                                            <div class="form-group">
+                                                <label for="countryPresent">Select Country:</label>
+                                                <select class="form-control" id="countryPresent">
+                                                    <option>-- Select Country --</option>
+                                                    <option>Bangladesh</option>
+                                                    <option>India</option>
+                                                    <option>Canada</option>
+                                                    <option>Australia</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="districtPresent">Select District:</label>
+                                                <select class="form-control" id="districtPresent">
+                                                    <option>-- Select District --</option>
+                                                    <option>Chittagong</option>
+                                                    <option>Dhaka</option>
+                                                    <option>Khulna</option>
+                                                    <option>Jashore</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="thanaPresent">Select Thana:</label>
+                                                <select class="form-control" id="thanaPresent">
+                                                    <option>-- Select Thana --</option>
+                                                    <option>Kotowali</option>
+                                                    <option>Vatara</option>
+                                                    <option>Dhigoloya</option>
+                                                    <option>Avoynagar</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="zipCodePresent">Enter Zip Code:</label>
+                                                <input type="text" class="form-control" id="zipCodePresent">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="houseNoPresent">Type your House No:</label>
+                                                <input type="text" class="form-control" id="houseNoPresent">
+                                            </div>
+                                        </div>
+
+                                        <!-- Checkbox to Save as Permanent Address -->
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input" id="saveAsPermanent">
+                                            <label class="form-check-label" for="saveAsPermanent">Save as
+                                                Permanent Address</label>
+                                        </div>
+                                        <hr> <!-- Horizontal line for separation -->
+
+                                        <!-- Permanent Address Details -->
+                                        <div class="form-group">
+                                            <h6>Permanent Address Details</h6>
+                                            <div class="form-group">
+                                                <label for="countryPermanent">Select Country:</label>
+                                                <select class="form-control" id="countryPermanent">
+                                                    <option>-- Select Country --</option>
+                                                    <option>Bangladesh</option>
+                                                    <option>India</option>
+                                                    <option>Canada</option>
+                                                    <option>Australia</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="districtPermanent">Select District:</label>
+                                                <select class="form-control" id="districtPermanent">
+                                                    <option>-- Select District --</option>
+                                                    <option>Chittagong</option>
+                                                    <option>Dhaka</option>
+                                                    <option>Khulna</option>
+                                                    <option>Jashore</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="thanaPermanent">Select Thana:</label>
+                                                <select class="form-control" id="thanaPermanent">
+                                                    <option>-- Select Thana --</option>
+                                                    <option>Kotowali</option>
+                                                    <option>Vatara</option>
+                                                    <option>Dhigoloya</option>
+                                                    <option>Avoynagar</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="zipCodePermanent">Enter Zip Code:</label>
+                                                <input type="text" class="form-control" id="zipCodePermanent">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="houseNoPermanent">Type your House No:</label>
+                                                <input type="text" class="form-control" id="houseNoPermanent">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Education/Training Section -->
+            <div class="card">
+                <div class="card-header" id="headingTwo">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo"
+                            aria-expanded="false" aria-controls="collapseTwo">
+                            Education/Training
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                    <div class="card-body">
+                        <!-- Academic Summary Accordion -->
+                        <div class="accordion" id="academicAccordion">
+                            <div class="card">
+                                <div class="card-header" id="headingAcademicSummary">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link" data-toggle="collapse"
+                                            data-target="#collapseAcademicSummary" aria-expanded="true"
+                                            aria-controls="collapseAcademicSummary">
+                                            Academic Summary
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div id="collapseAcademicSummary" class="collapse"
+                                    aria-labelledby="headingAcademicSummary" data-parent="#academicAccordion">
+                                    <div class="card-body">
+                                        <div class="academic-summary-form">
+                                            <!-- Academic Level: SSC/Equivalent -->
+                                            <div class="form-group">
+                                                <label for="academicLevelSSC">Academic Level: SSC/Equivalent</label>
+                                                <select class="form-control" id="academicLevelSSC">
+                                                    <!-- Options for academic level -->
+                                                    <option>SSC/Equivalent</option>
+                                                    <option>HSC/Equivalent</option>
+                                                    <option>Bachelor/Undergraduate</option>
+                                                    <option>Masters/Graduate</option>
+                                                    <option>Professional Certificate/Degree/Diploma</option>
+                                                </select>
+                                            </div>
+                                            <!-- Exam/Degree Title -->
+                                            <div class="form-group">
+                                                <label for="examTitleSSC">Exam/Degree Title:</label>
+                                                <input type="text" class="form-control" id="examTitleSSC">
+                                            </div>
+                                            <!-- Major/Group -->
+                                            <div class="form-group">
+                                                <label for="majorSSC">Major/Group:</label>
+                                                <input type="text" class="form-control" id="majorSSC">
+                                            </div>
+                                            <!-- Institute Name -->
+                                            <div class="form-group">
+                                                <label for="instituteNameSSC">Institute Name:</label>
+                                                <input type="text" class="form-control" id="instituteNameSSC">
+                                            </div>
+                                            <!-- Result -->
+                                            <div class="form-group">
+                                                <label for="resultSSC">Result:</label>
+                                                <select class="form-control" id="resultSSC">
+                                                    <!-- Options for result -->
+                                                    <option>Grade/Class</option>
+                                                    <option>CGPA</option>
+                                                </select>
+                                            </div>
+                                            <!-- CGPA and Scale -->
+                                            <div class="form-group">
+                                                <label for="cgpaSSC">CGPA:</label>
+                                                <input type="text" class="form-control" id="cgpaSSC">
+                                                <label for="scaleSSC">Scale:</label>
+                                                <input type="text" class="form-control" id="scaleSSC">
+                                            </div>
+                                            <!-- Year of Passing -->
+                                            <div class="form-group">
+                                                <label for="passingYearSSC">Year of Passing:</label>
+                                                <select class="form-control" id="passingYearSSC">
+                                                    <option value="">-- Select Year --</option>
+                                                    {% for year in range(1980, 2025) %}
+                                                    <option value="{{ year }}">{{ year }}</option>
+                                                    {% endfor %}
+                                                </select>
+                                            </div>
+                                            <!-- Achievement -->
+                                            <div class="form-group">
+                                                <label for="achievementSSC">Achievement:</label>
+                                                <input type="text" class="form-control" id="achievementSSC">
+                                            </div>
+                                        </div>
+                                        <!-- Add more sections for other academic levels (HSC/Equivalent, Bachelor/Undergraduate, Masters/Graduate, Professional Certificate/Degree/Diploma) -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Training Summary Accordion -->
+                            <div class="accordion" id="trainingAccordion">
+                                <div class="card">
+                                    <div class="card-header" id="headingTrainingSummary">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link" data-toggle="collapse"
+                                                data-target="#collapseTrainingSummary" aria-expanded="true"
+                                                aria-controls="collapseTrainingSummary">
+                                                Training Summary
+                                            </button>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseTrainingSummary" class="collapse"
+                                        aria-labelledby="headingTrainingSummary" data-parent="#trainingAccordion">
+                                        <div class="card-body">
+                                            <!-- Training Title -->
+                                            <div class="form-group">
+                                                <label for="trainingTitle">Training Title:</label>
+                                                <input type="text" class="form-control" id="trainingTitle">
+                                            </div>
+                                            <!-- Country -->
+                                            <div class="form-group">
+                                                <label for="trainingCountry">Country:</label>
+                                                <input type="text" class="form-control" id="trainingCountry">
+                                            </div>
+                                            <!-- Training Year -->
+                                            <div class="form-group">
+                                                <label for="trainingYear">Training Year:</label>
+                                                <select class="form-control" id="trainingYear">
+                                                    <!-- Options for years (1980-2024) -->
+                                                    <option value="">-- Select Year --</option>
+                                                    {% for year in range(1980, 2025) %}
+                                                    <option value="{{ year }}">{{ year }}</option>
+                                                    {% endfor %}
+                                                </select>
+                                            </div>
+                                            <!-- Institute -->
+                                            <div class="form-group">
+                                                <label for="trainingInstitute">Institute:</label>
+                                                <input type="text" class="form-control" id="trainingInstitute">
+                                            </div>
+                                            <!-- Duration -->
+                                            <div>
+                                                <label for="department">Trainning Duration</label>
+                                            </div>
+
+                                            <div class="form-group d-flex">
+
+
+                                                <div class="mr-2">
+                                                    <label for="startDate">Start date:</label>
+                                                    <input type="date" class="form-control" id="startDate"
+                                                        name="startDate" required>
+                                                </div>
+                                                <div>
+                                                    <label for="endDate">End date:</label>
+                                                    <input type="date" class="form-control" id="endDate" name="endDate"
+                                                        required>
+                                                </div>
+                                            </div>
+
+
+                                            <!-- Location -->
+                                            <div class="form-group">
+                                                <label for="trainingLocation">Location:</label>
+                                                <input type="text" class="form-control" id="trainingLocation">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <!-- Employment History Section -->
+        <div class="card">
+            <div class="card-header" id="headingThree">
+                <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree"
+                        aria-expanded="false" aria-controls="collapseThree">
+                        Employment History
+                    </button>
+                </h5>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                <div class="card-body">
+                    <!-- Employment History Accordion -->
+                    <div class="card-body">
+                        <!-- Employment History Form Fields -->
+                        <!-- You can use JavaScript to dynamically add or delete multiple experiences -->
+                        <div class="experience">
+                            <!-- Company Name -->
+                            <div class="form-group">
+                                <label for="companyName">Company Name:</label>
+                                <input type="text" class="form-control" id="companyName">
+                            </div>
+                            <!-- Designation -->
+                            <div class="form-group">
+                                <label for="designation">Designation:</label>
+                                <input type="text" class="form-control" id="designation">
+                            </div>
+                            <!-- Department -->
+                            <div class="form-group">
+                                <label for="department">Department:</label>
+                                <input type="text" class="form-control" id="department">
+                            </div>
+                            <!-- Employment Period (Start - End Date) -->
+
+                            <div>
+                                <label for="department">Employment Period:</label>
+                            </div>
+
+                            <div class="form-group d-flex">
+
+
+                                <div class="mr-2">
+                                    <label for="startDate">Start date:</label>
+                                    <input type="date" class="form-control" id="startDate" name="startDate" required>
+                                </div>
+                                <div>
+                                    <label for="endDate">End date:</label>
+                                    <input type="date" class="form-control" id="endDate" name="endDate" required>
+                                </div>
+                            </div>
+
+
+                            <!-- Responsibilities -->
+                            <div class="form-group">
+                                <label for="responsibilities">Responsibilities:</label>
+                                <textarea class="form-control" id="responsibilities" rows="3"></textarea>
+                            </div>
+                            <!-- Area of Expertise -->
+                            <div class="form-group">
+                                <label for="expertise">Area of Expertise:</label>
+                                <input type="text" class="form-control" id="expertise">
+                            </div>
+                            <!-- Company Location -->
+                            <div class="form-group">
+                                <label for="companyLocation">Company Location:</label>
+                                <input type="text" class="form-control" id="companyLocation">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Other Information Section -->
+        <div class="card">
+            <div class="card-header" id="headingFour">
+                <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour"
+                        aria-expanded="false" aria-controls="collapseFour">
+                        Other Information
+                    </button>
+                </h5>
+            </div>
+            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+                <div class="card-body">
+                    <!-- Forms for Skills, etc. -->
+                </div>
+            </div>
+        </div>
+        <!-- Accomplishments Section -->
+        <div class="card">
+            <div class="card-header" id="headingFive">
+                <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFive"
+                        aria-expanded="false" aria-controls="collapseFive">
+                        Accomplishments
+                    </button>
+                </h5>
+            </div>
+            <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
+                <div class="card-body">
+                    <!-- Forms for Portfolio, Publications, Projects -->
+                </div>
+            </div>
+        </div>
+        <div class="d-flex justify-content-end">
+            <button type="submit" class="btn btn-primary" id="postSaveButton">Save</button>
+        </div>
+    </div>
+   
+
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <p>&copy; 2024 Career Portal</p>
+    </footer>
+
+    <script>
+        document.getElementById('postSaveButton').addEventListener('click', function() {
+    window.location.href = '{{ url_for("login") }}'; // This line still uses Flask templating.
+    });
+
+    </script>
+
+
+
+    <!-- <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var saveAsPermanentCheckbox = document.getElementById('saveAsPermanent');
+            var presentAddressFields = document.querySelectorAll('#collapseAddress .card-body .form-group'); // Select present address fields
+            var permanentAddressFields = document.querySelectorAll('#collapseAddress .card-body:last-of-type .form-group'); // Select permanent address fields
+    
+            saveAsPermanentCheckbox.addEventListener('change', function() {
+                if (saveAsPermanentCheckbox.checked) {
+                    // Copy present address to permanent address fields
+                    presentAddressFields.forEach(function(presentField, index) {
+                        if (index !== 1) { // Skip the Save as Permanent Address checkbox
+                            permanentAddressFields[index].querySelector('input, select').value = presentField.querySelector('input, select').value;
+                        }
+                    });
+                } else {
+                    // Clear permanent address fields
+                    permanentAddressFields.forEach(function(field) {
+                        field.querySelector('input, select').value = '';
+                    });
+                }
+            });
+        });
+    </script> -->
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
