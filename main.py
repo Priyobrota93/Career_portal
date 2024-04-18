@@ -29,7 +29,7 @@ def index():
     return render_template('user/index.html', logged_in=is_logged_in())
 
 
-# Registration route
+
 # Registration route
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
@@ -43,7 +43,7 @@ def signup():
         if user_type == 'job_seeker':
             type_value = 1
         else:
-            type_value = 2
+            type_value = 2 
 
         try:
             conn = connect_to_postgres()
@@ -56,7 +56,7 @@ def signup():
 
             flash('Registration successful. Please log in.', 'success')
             if user_type == 'job_seeker':
-                return redirect(url_for('profile'))
+                return redirect(url_for('Jprofile'))
             elif user_type == 'recruiter':
                 return redirect(url_for('jobPost'))
         except psycopg2.Error as e:
@@ -89,13 +89,16 @@ def login():
 
             if user:
                 session['email'] = email  # Store the username in the session
-                user_type = user[4]
-                if user_type == 1:
-                    flash('Login successful.', 'success')
-                    return redirect(url_for('index'))
-                elif user_type == 2:
-                    flash('Login successful as recruiter.', 'success')
-                    return redirect(url_for('jobPost'))
+
+                flash('Login successful.', 'success')
+                return redirect(url_for('index'))
+                # user_type = user[4]
+                # if user_type == 1:
+                #     flash('Login successful.', 'success')
+                #     return redirect(url_for('index'))
+                # elif user_type == 2:
+                #     flash('Login successful as recruiter.', 'success')
+                #     return redirect(url_for('jobPost'))
             else:
                 flash('Invalid username or password. Please try again.', 'danger')
                 return redirect(url_for('login'))
@@ -118,8 +121,67 @@ def logout():
     return redirect(url_for('index'))
 
 
-@app.route('/profile')
-def profile():
+@app.route('/profile', methods=['GET', 'POST'])
+def Jprofile():
+    if request.method == 'POST':
+        photo = request.form['photo']
+        firstName = request.form['firstName']
+        lastName = request.form['lastName']
+        fatherName = request.form['fatherName']
+        motherName = request.form['motherName']
+        gender = request.form['gender']
+        religion = request.form['religion']
+        maritalStatus = request.form['maritalStatus']
+        nationality = request.form['nationality']
+        nationalId = request.form['nationalId']
+        primaryMobile = request.form['primaryMobile']
+        secondaryMobile = request.form['secondaryMobile']
+        primaryEmail = request.form['primaryEmail']
+        bloodGroup = request.form['bloodGroup']
+        alternateEmail = request.form['alternateEmail']
+        countryPresent = request.form['countryPresent']
+        districtPresent = request.form['districtPresent']
+        thanaPresent = request.form['thanaPresent']
+        zipCodePresent = request.form['zipCodePresent']
+        houseNoPresent = request.form['houseNoPresent']
+        countryPermanent = request.form['countryPermanent']
+        districtPermanent = request.form['districtPermanent']
+        thanaPermanent = request.form['thanaPermanent']
+        zipCodePermanent = request.form['zipCodePermanent']
+        houseNoPermanent = request.form['houseNoPermanent']
+        
+
+        try:
+            conn = connect_to_postgres()
+            cursor = conn.cursor()
+
+
+            
+        # Check if the permanent address should be saved
+            save_as_permanent = 'saveAsPermanent' in request.form and request.form['saveAsPermanent'] == 'on'
+
+            # Insert personal_details into the database
+            sql = "INSERT INTO personal_details (photo, first_name, last_name, father_name, mother_name , gender, religion,marital_status,nationality,national_id,primary_mobile,secondary_mobile,primary_email,blood_group,alternate_email,present_country,present_district,present_thana,present_zip_code,present_house_no,permanent_country,permanent_district,permanent_thana,permanent_zip_code,permanent_house_no) VALUES (%s, %s, %s, %s, %s, %s, %s,%s, %s, %s, %s, %s, %s, %s,%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
+            cursor.execute(sql, (photo, firstName, lastName, fatherName, motherName, gender, religion,maritalStatus,nationality,nationalId,primaryMobile,secondaryMobile,primaryEmail,bloodGroup,alternateEmail,countryPresent,districtPresent,thanaPresent,zipCodePresent,houseNoPresent,
+                                #  countryPermanent,districtPermanent,thanaPermanent,zipCodePermanent,houseNoPermanent))
+                                countryPermanent if save_as_permanent else None,
+                                districtPermanent if save_as_permanent else None,
+                                thanaPermanent if save_as_permanent else None,
+                                zipCodePermanent if save_as_permanent else None,
+                                houseNoPermanent if save_as_permanent else None))
+            conn.commit()  
+
+            flash('personal_details saved successfully.', 'success')
+            # return redirect(url_for('index'))
+        except psycopg2.Error as e:
+            flash('Error saving personal_details. Please try again.', 'danger')
+            print("Error:", e)
+            # return redirect(url_for('profile'))
+        finally:
+            cursor.close()
+            conn.close()
+
+
     return render_template('user/profile.html')
 
 
@@ -171,13 +233,13 @@ def jobList():
         conn = connect_to_postgres()
         cursor = conn.cursor()
 
-        # title = request.form['title']
-        # organization = request.form['organization']
-        # location = request.form['location']
-        # experience = request.form['experience']
-        # deadline = request.form['deadline']
+        title = request.form.get['title']
+        organization = request.form.get['organization']
+        location = request.form.get['location']
+        experience = request.form.get['experience']
+        deadline = request.form.get['deadline']
         category = request.form.get['category']
-        # description = request.form['description']
+        description = request.form.get['description']
 
         # Get search term from form data
         # search_term = request.form.get('applyFilters')
@@ -189,7 +251,7 @@ def jobList():
         else:
             # If no search term provided, fetch all job listings
             sql = "SELECT job_title,organization_name,location,work_experience,description,deadline FROM jobs"
-            cursor.execute(sql)
+            cursor.execute(sql,(title, organization, location, experience, category, deadline, description))
 
         # Fetch all rows
         rows = cursor.fetchall()
